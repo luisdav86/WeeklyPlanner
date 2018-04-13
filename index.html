@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weekly Planner</title>
+</head>
+<body>
+        <div id="event">
+        <div class="center">
+             <text>Start Time</text>
+            <input id="timeStart" type="time" step="3600" onchange="view.validateTime()" required/>
+            <text>End Time</text>
+            <input id="timeEnd" type="time" step="3600" onchange="view.validateTime()" required/>
+            <text>Appointment Type</text>
+            <select id="appointmentType">
+                  <option value="doctor">Doctor</option>
+                  <option value="homeWork">Home work</option>
+                  <option value="meeting">Meeting</option>
+            </select>
+            <button id="saveButton" onclick="view.saveEvent()">
+                Save
+            </button>
+            <button id="updateButton" onclick="view.updateEvent()">
+                Update
+            </button>
+            <button id="deleteButton" onclick="view.confirmDelete()">
+                Delete
+        </button>
+        </div>
+    </div>
+</br>
+    <div id="container">
+    </div>
+    <div class="center">
+            <button id="priorWeek" onclick="view.prior()">
+                <
+            </button>
+            <text>Change week</text>
+             <button id="nextWeek" onclick="view.next()">
+                >
+            </button>
+             <text>View Type</text>
+            <select id="viewType" onchange="view.changeView()">
+                  <option value="week">Week</option>
+                  <option value="day">Day</option>
+            </select>
+        </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
